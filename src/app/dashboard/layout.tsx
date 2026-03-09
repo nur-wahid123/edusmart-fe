@@ -17,8 +17,6 @@ import { RoleEnum } from "@/enums/role.enum";
 import { UserInfo } from "@/objects/user-info.object";
 import { changeFavicon, getImage } from "@/util/util";
 import { AppContext } from "@/user-components/contexts/app.context";
-import { SchoolInfo } from "@/objects/school-info.object";
-import { SchoolObject } from "@/objects/school.object";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,34 +41,16 @@ export default function RootLayout({
     is_demo: true,
   });
 
-  const [school, setSchool] = useState<SchoolInfo>({
-    address:"",
-    logo:0,
-    name:""
-  });
   const [loading, setLoading] = useState(true);
   const fetchUser = useCallback(async () => {
     setLoading(true);
     await axiosInstance.get(`${ENDPOINT.ME}`).then((res) => {
       const getUser: UserInfo = res.data.data;
       setUser(getUser);
-      fetchSchool(getUser)
       setLoading(false);
     });
   }, [user, setUser]);
   
-  const fetchSchool = useCallback(async (userr:UserInfo)=>{
-    await axiosInstance.get(`${ENDPOINT.DETAIL_SCHOOL}/${userr.school_id}`).then(async res=>{
-      const getSchool: SchoolObject = res.data.data;
-      const img = await getImage(getSchool.image ?? 0)
-      setSchool({
-        address: getSchool.address,
-        logo: img,
-        name: getSchool.name
-      })
-      changeFavicon(`${ENDPOINT.DETAIL_IMAGE}/${img}`);
-    })
-  },[])
 
   useEffect(() => {
     fetchUser();
@@ -84,7 +64,6 @@ export default function RootLayout({
         isLoading: loading,
         refreshData: fetchUser,
         error: null,
-        school
       }}
     >
       <div className={inter.className + " max-h-screen"}>

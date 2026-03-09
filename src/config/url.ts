@@ -1,6 +1,38 @@
 import CONFIG from "./config";
 
 const ENDPOINT = {
+
+  //Unit
+  LIST_UNIT: `${CONFIG.BASE_URL}/unit/list`,
+  CREATE_UNIT: `${CONFIG.BASE_URL}/unit/create`,
+  DETAIL_UNIT: (id: string | number) => `${CONFIG.BASE_URL}/unit/detail/${id}`,
+  UPDATE_UNIT: (id: string | number) => `${CONFIG.BASE_URL}/unit/update/${id}`,
+  REMOVE_UNIT: (id: string | number) => `${CONFIG.BASE_URL}/unit/remove/${id}`,
+
+  //Unit Category
+  LIST_UNIT_CATEGORY: `${CONFIG.BASE_URL}/unit-category/list`,
+  CREATE_UNIT_CATEGORY: `${CONFIG.BASE_URL}/unit-category/create`,
+  DETAIL_UNIT_CATEGORY: (id: string | number) => `${CONFIG.BASE_URL}/unit-category/detail/${id}`,
+  UPDATE_UNIT_CATEGORY: (id: string | number) => `${CONFIG.BASE_URL}/unit-category/update/${id}`,
+  REMOVE_UNIT_CATEGORY: (id: string | number) => `${CONFIG.BASE_URL}/unit-category/remove/${id}`,
+  
+  //Unit Category
+  LIST_MAP: `${CONFIG.BASE_URL}/map/list`,
+  CREATE_MAP: `${CONFIG.BASE_URL}/map/create`,
+  DETAIL_MAP: (id: string | number) => `${CONFIG.BASE_URL}/map/detail/${id}`,
+  UPDATE_MAP: (id: string | number) => `${CONFIG.BASE_URL}/map/update/${id}`,
+  REMOVE_MAP: (id: string | number) => `${CONFIG.BASE_URL}/map/remove/${id}`,
+
+
+  //Authentication
+  LOGIN: `${CONFIG.BASE_URL}/auth/login`,
+  GET_PROFILE: `${CONFIG.BASE_URL}/auth/profile`,
+  LOGOUT: `${CONFIG.BASE_URL}/auth/logout`,
+  ME: `${CONFIG.BASE_URL}/auth/me`,
+  SELF_EDIT: `${CONFIG.BASE_URL}/auth/edit`,
+  PROFILE: `${CONFIG.BASE_URL}/auth/profile`,
+  EDIT_PASSWORD: `${CONFIG.BASE_URL}/auth/edit-password`,
+
   //School
   SCHOOL_CREATE: `${CONFIG.BASE_URL}/school/create`,
   DETAIL_SCHOOL: `${CONFIG.BASE_URL}/school/detail`,
@@ -63,15 +95,6 @@ const ENDPOINT = {
   UPDATE_CLASS: `${CONFIG.BASE_URL}/classes/update`,
   DELETE_CLASS: `${CONFIG.BASE_URL}/classes/delete`,
   MASTER_CLASS: `${CONFIG.BASE_URL}/classes/list`,
-
-  //Authentication
-  LOGIN: `${CONFIG.BASE_URL}/auth/login`,
-  GET_PROFILE: `${CONFIG.BASE_URL}/auth/profile`,
-  LOGOUT: `${CONFIG.BASE_URL}/auth/logout`,
-  ME: `${CONFIG.BASE_URL}/auth/me`,
-  SELF_EDIT: `${CONFIG.BASE_URL}/auth/edit`,
-  PROFILE: `${CONFIG.BASE_URL}/auth/profile`,
-  EDIT_PASSWORD: `${CONFIG.BASE_URL}/auth/edit-password`,
 
   //Users
   CREATE_USER: `${CONFIG.BASE_URL}/users/create`,

@@ -5,9 +5,8 @@ import { setDocumentTitle } from "@/util/util";
 import { useContext, useEffect } from "react";
 
 export default function Page(){
-  const { school } = useContext(AppContext);
   useEffect(()=>{
-    setDocumentTitle('Dashboard', school.name ?? "")
+    setDocumentTitle('Dashboard Wangasa',"")
   },[])
   return (
     <div>

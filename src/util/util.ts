@@ -48,6 +48,37 @@ export function changeFavicon(iconUrl: string) {
   }
 }
 
+export function toRupiahs(value: number | string): string {
+  // Convert to number if input is string
+  let n = typeof value === "string" ? Number(value) : value;
+  if (isNaN(n)) return "Rp 0";
+
+  // Remember negative
+  const isNegative = n < 0;
+  n = Math.abs(n);
+
+  // Separate integer and fraction part
+  const [intPart, fractionPart] = n
+    .toFixed(2) // Always show two decimals, you may adjust as needed
+    .split(".");
+
+  const parts = intPart.split("");
+  let rupiah = "";
+  while (parts.length > 3) {
+    rupiah = "." + parts.splice(parts.length - 3, 3).join("") + rupiah;
+  }
+  rupiah = parts.join("") + rupiah;
+
+  let result;
+  if (fractionPart === "00") {
+    result = "Rp " + rupiah;
+  } else {
+    result = "Rp " + rupiah + "," + fractionPart;
+  }
+
+  return isNegative ? "-" + result : result;
+}
+
 export async function getImage(imageLinkId: number){
   let imageId:number = 0;
   await axiosInstance.get(`${ENDPOINT.LIST_IMAGE}/${imageLinkId}`).then((res)=>{
