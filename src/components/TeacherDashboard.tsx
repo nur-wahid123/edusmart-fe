@@ -2,13 +2,11 @@
 
 import { useState } from 'react';
 import { LogOut } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import TeacherLogin from './TeacherLogin';
 
-interface TeacherDashboardProps {
-  onLogout: () => void;
-}
-
-export default function TeacherDashboard({ onLogout }: TeacherDashboardProps) {
+export default function TeacherDashboard() {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [teacherId, setTeacherId] = useState('');
 
@@ -19,7 +17,7 @@ export default function TeacherDashboard({ onLogout }: TeacherDashboardProps) {
           setTeacherId(id);
           setIsAuthenticated(true);
         }}
-        onLogout={onLogout}
+        onLogout={() => router.push('/')}
       />
     );
   }
@@ -30,7 +28,7 @@ export default function TeacherDashboard({ onLogout }: TeacherDashboardProps) {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <h1 className="text-xl font-black text-slate-800">EduSmart Pro - Teacher Dashboard</h1>
           <button
-            onClick={onLogout}
+            onClick={() => router.push('/')}
             className="p-2 text-slate-400 hover:text-red-500 rounded-lg transition-colors"
           >
             <LogOut size={20} />

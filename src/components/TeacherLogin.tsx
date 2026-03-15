@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ShieldCheck, LogOut } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { authService } from '@/services/auth.service';
 
 interface TeacherLoginProps {
@@ -10,6 +11,7 @@ interface TeacherLoginProps {
 }
 
 export default function TeacherLogin({ onLoginSuccess, onLogout }: TeacherLoginProps) {
+  const router = useRouter();
   const [teacherId, setTeacherId] = useState('');
   const [pin, setPin] = useState('');
   const [loginError, setLoginError] = useState('');
