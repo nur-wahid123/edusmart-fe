@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;700&family=Noto+Sans+Javanese:wght@400;500;700&display=swap');
+
+.rich-text {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.rich-text p {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+.rich-text table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.rich-text th,
+.rich-text td {
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  text-align: left;
+}
+
+.rich-text th {
+  background-color: #f1f5f9;
+  font-weight: 800;
+}
+
+.rich-text img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+  display: block;
+}
+
+.rich-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.rich-text ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.rich-text sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.rich-text sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.checkbox-wrapper input:checked + div {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.checkbox-wrapper input:checked + div svg {
+  display: block;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.watermark-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  overflow: hidden;
+  opacity: 0.04;
+  user-select: none;
+}
+
+.watermark-item {
+  transform: rotate(-30deg);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #000;
+  padding: 4rem;
+  white-space: nowrap;
+}
