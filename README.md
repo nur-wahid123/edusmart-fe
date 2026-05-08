@@ -53,11 +53,11 @@ Create a `.env.local` at the project root:
 
 ```bash
 # Base URL used by internal endpoint builder (src/config/config.ts + src/config/url.ts)
-BASE_URL=http://localhost:8080
+NEXT_PUBLIC_BASE_URL=http://localhost:8080
 
 ```
 Notes:
-- The code references both `BASE_URL` (for constructing endpoints in `src/config/url.ts`) and `NEXT_PUBLIC_API_BASE_URL` (for Axios base URL in `src/util/request.util.ts`). Make sure they point to the same backend unless you explicitly split them.
+- The code references both `NEXT_PUBLIC_BASE_URL` (for constructing endpoints in `src/config/url.ts`) and `NEXT_PUBLIC_API_BASE_URL` (for Axios base URL in `src/util/request.util.ts`). Make sure they point to the same backend unless you explicitly split them.
 - If you change ports/domains, update CORS on the backend accordingly.
 
 ### Run

@@ -25,7 +25,7 @@ jobs:
           push: true
           tags: indrafajar/pelanggaran-fe-saas:latest  # Update this
           build-args: |
-            BASE_URL=${{ secrets.BASE_URL }}
+            NEXT_PUBLIC_BASE_URL=${{ secrets.BASE_URL }}
 
   deploy-vm2:
     runs-on: ubuntu-latest
