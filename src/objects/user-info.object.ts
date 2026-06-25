@@ -5,7 +5,7 @@ export class UserInfo {
     name?: string;
     sub?: number;
     email?: string;
-    role?: RoleEnum;
+    user_type?: RoleEnum;
     school_id?: number;
     is_demo?: boolean;
     start_date?: string;

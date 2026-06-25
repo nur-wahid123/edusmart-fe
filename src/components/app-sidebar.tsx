@@ -90,6 +90,58 @@ const data = {
       icon: CogIcon,
       className: "font-medium",
     },
+  ],
+  teacherPage: [
+    {
+      name: "Data Pelanggaran",
+      url: "/dashboard/violation",
+      icon: ListChecksIcon,
+      className: "font-medium",
+    },
+    {
+      name: "Jenis Pelanggaran",
+      url: "/dashboard/violation-type",
+      icon: TagsIcon,
+      className: "font-medium",
+    },
+    {
+      name: "Kelas",
+      url: "/dashboard/class-page",
+      icon: SchoolIcon,
+      className: "font-medium",
+    },
+    {
+      name: "Siswa",
+      url: "/dashboard/student",
+      icon: GraduationCapIcon,
+      className: "font-medium",
+    },
+    {
+      name: "User",
+      url: "/dashboard/user",
+      icon: Users2Icon,
+      className: "font-medium",
+    },
+    {
+      name: "Pengaturan",
+      url: "/dashboard/settings",
+      icon: CogIcon,
+      className: "font-medium",
+    },
+  ],
+  superAdminPage: [
+    {
+      name: "Dashboard",
+      url: "/superadmin",
+      icon: ListChecksIcon,
+      className: "font-medium",
+    },
+    {
+      name: "Sekolah",
+      url: "/superadmin/school",
+      icon: ListChecksIcon,
+      className: "font-medium",
+    },
   ]
 }
 
@@ -101,8 +153,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher />
       </SidebarHeader>
       <SidebarContent>
-        <NavProjects title="User" projects={data.projects} />
-        {user.role === RoleEnum.ADMIN && <NavProjects title="Halaman Admin" projects={data.adminPage} />}
+        {user.user_type === RoleEnum.TEACHER && <NavProjects title="Halaman Admin" projects={data.teacherPage} />}
+        {user.user_type === RoleEnum.SCHOOL_ADMIN && <NavProjects title="Halaman Admin" projects={data.adminPage} />}
+        {user.user_type === RoleEnum.SUPERADMIN && <NavProjects title="Halaman Superadmin" projects={data.superAdminPage} />}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user} />

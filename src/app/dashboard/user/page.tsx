@@ -18,8 +18,8 @@ const config = {
     key_word: "user",
 };
 
-const roleBadge = (role: RoleEnum) => {
-    if (role === RoleEnum.USER) {
+const roleBadge = (user_type: RoleEnum) => {
+    if (role === RoleEnum.TEACHER) {
         return (
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
                 <User2 className="w-4 h-4" /> User
@@ -92,7 +92,7 @@ export default function Page() {
                                     <div>
                                         <div className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
                                             {user.name}
-                                            {roleBadge(user.role ?? RoleEnum.USER)}
+                                            {roleBadge(user.role ?? RoleEnum.TEACHER)}
                                         </div>
                                         <div className="mt-1">
                                             {violationCountBadge(violationCount)}

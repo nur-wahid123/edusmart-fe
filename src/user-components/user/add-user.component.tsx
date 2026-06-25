@@ -27,7 +27,7 @@ export default ({reFetch}: { reFetch: () => void }) => {
         username: "",
         email: "",
         password: "",
-        role: RoleEnum.USER,
+        user_type: RoleEnum.TEACHER,
     })
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -46,7 +46,7 @@ export default ({reFetch}: { reFetch: () => void }) => {
                     username: "",
                     email: "",
                     password: "",
-                    role: RoleEnum.USER
+                    user_type: RoleEnum.TEACHER
                 })
             })
             .catch((error) => {
@@ -116,7 +116,7 @@ export default ({reFetch}: { reFetch: () => void }) => {
                     <Select value={value.role} onValueChange={(e) => {
                         const vl = convertStringToEnum(e, RoleEnum);
                         if (vl !== undefined) {
-                            setValue({ ...value, role: vl });
+                            setValue({ ...value, user_type: vl });
                         }
                     }}>
                         <SelectTrigger className="w-[180px]">
@@ -125,7 +125,7 @@ export default ({reFetch}: { reFetch: () => void }) => {
                         <SelectContent>
                             <SelectGroup>
                                 <SelectLabel>Role</SelectLabel>
-                                <SelectItem value={RoleEnum.USER}>User</SelectItem>
+                                <SelectItem value={RoleEnum.TEACHER}>User</SelectItem>
                                 <SelectItem value={RoleEnum.ADMIN}>Admin</SelectItem>
                             </SelectGroup>
                         </SelectContent>

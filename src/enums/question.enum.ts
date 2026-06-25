@@ -1,0 +1,8 @@
+export enum QuestionTypeEnum {
+    MULTIPLE = 'MULTIPLE',
+    MULTIPLE_COMPLEX = 'MULTIPLE_COMPLEX',
+    MATCHING = 'MATCHING',
+    ORDERING = 'ORDERING',
+    TRUE_FALSE = 'TRUE_FALSE',
+    ONEWORD = 'ONEWORD'
+}

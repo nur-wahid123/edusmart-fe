@@ -1,8 +1,8 @@
 import { RoleEnum } from "@/enums/role.enum";
-import { Violation } from "./violation.object";
 import { SchoolObject } from "./school.object";
+import { CommonBaseObject } from "./common.object";
 
-export interface User {
+export interface UserObject extends CommonBaseObject {
   id?: number;
 
   name?: string;
@@ -13,9 +13,7 @@ export interface User {
 
   email?: string;
 
-  role?: RoleEnum;
-
-  violations?: Violation[];
+  user_type?: RoleEnum;
 
   school?: SchoolObject;
 

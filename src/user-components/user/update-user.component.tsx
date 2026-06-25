@@ -59,7 +59,7 @@ export default function EditUser({
     name: "",
     username: "",
     email: "",
-    role: RoleEnum.USER,
+    user_type: RoleEnum.TEACHER,
   });
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function EditUser({
         name: data.name ?? "",
         username: data.username ?? "",
         email: data.email ?? "",
-        role: data.role ?? RoleEnum.USER,
+        user_type: data.role ?? RoleEnum.TEACHER,
       });
     }
   }, [data]);
@@ -216,11 +216,11 @@ export default function EditUser({
             <div className="flex gap-3 items-center">
               <Label>Role</Label>
               <Select
-                value={value.role}
+                value={value.user_type}
                 onValueChange={(e) => {
                   const vl = convertStringToEnum(e, RoleEnum);
                   if (vl !== undefined) {
-                    setValue({ ...value, role: vl });
+                    setValue({ ...value, user_type: vl });
                   }
                 }}
               >
@@ -230,8 +230,8 @@ export default function EditUser({
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Role</SelectLabel>
-                    <SelectItem value={RoleEnum.USER}>User</SelectItem>
-                    <SelectItem value={RoleEnum.ADMIN}>Admin</SelectItem>
+                    <SelectItem value={RoleEnum.TEACHER}>Guru</SelectItem>
+                    <SelectItem value={RoleEnum.SCHOOL_ADMIN}>Admin</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

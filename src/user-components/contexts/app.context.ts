@@ -7,7 +7,6 @@ export const AppContext = createContext<{
   isLoading: boolean;
   refreshData: () => void;
   error: string | null;
-  // setProfile: (name: string, email: string, username: string) => void;
 }>({
   error: "",
   user: {
@@ -15,9 +14,8 @@ export const AppContext = createContext<{
     name: "",
     sub: 0,
     email: "",
-    role: RoleEnum.USER,
+    user_type: RoleEnum.TEACHER,
   },
   isLoading: true,
   refreshData: () => {},
-  // setProfile: () => {},
 });

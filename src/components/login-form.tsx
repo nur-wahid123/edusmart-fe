@@ -31,7 +31,7 @@ export function LoginForm({
       .post(`${ENDPOINT.LOGIN}`, state)
       .then(async (res) => {
         const token = res.data.data.access_token;
-        const role = res.data.data.role as RoleEnum;
+        const role = res.data.data.user_type as RoleEnum;
 
         if (token) {
           try {
@@ -50,7 +50,11 @@ export function LoginForm({
         });
         if (role === RoleEnum.SUPERADMIN) {
           router.push("/superadmin");
-        } else {
+        }
+        else if (role === RoleEnum.SCHOOL_ADMIN) {
+          router.push("/admin");
+        }
+        else {
           router.push("/dashboard");
         }
       })

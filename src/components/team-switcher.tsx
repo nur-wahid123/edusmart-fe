@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
-import ENDPOINT from "@/config/url";
 import { AppContext } from "@/user-components/contexts/app.context";
 
 export function TeamSwitcher() {

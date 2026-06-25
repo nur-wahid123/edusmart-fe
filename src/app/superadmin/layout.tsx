@@ -15,7 +15,6 @@ import { axiosInstance } from "@/util/request.util";
 import ENDPOINT from "@/config/url";
 import { RoleEnum } from "@/enums/role.enum";
 import { UserInfo } from "@/objects/user-info.object";
-import { changeFavicon, getImage } from "@/util/util";
 import { AppContext } from "@/user-components/contexts/app.context";
 
 const inter = Inter({

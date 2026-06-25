@@ -4,11 +4,11 @@ import { useEffect } from "react";
 
 export default function Page(){
   useEffect(()=>{
-    setDocumentTitle('Dashboard Guru',"")
+    setDocumentTitle('Dashboard Admin Sekolah',"")
   },[])
   return (
     <div>
-      <p>Guru</p>
+      <p>Admin Sekolah</p>
     </div>
   )
 }
